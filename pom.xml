@@ -11,11 +11,11 @@
     </parent>
 
     <groupId>com.ao</groupId>
-    <artifactId>wallet-app</artifactId>
+    <artifactId>wallet-history</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>wallet-app</name>
-    <description>Web backend system with Bitcoin wallet API</description>
+    <name>wallet-history</name>
+    <description>Web backend system with wallet history API</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -51,6 +51,11 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.microutils</groupId>
+            <artifactId>kotlin-logging</artifactId>
+            <version>1.12.0</version>
+        </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>
@@ -61,6 +66,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.box</groupId>
+            <artifactId>json-patch</artifactId>
+            <version>1.16</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

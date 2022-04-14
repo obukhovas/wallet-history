@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="01" author="aobukhov">
+        <createTable tableName="wallet" remarks="Table containing wallet information">
+            <column name="id" type="varchar" remarks="Wallet ID">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="current_amount" type="numeric(100000, 100000)" remarks="Current wallet amount">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="transaction" remarks="Table containing transaction records">
+            <column name="id" type="bigint" autoIncrement="true" remarks="Record ID">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="datetime" type="timestamp with time zone" remarks="Date and time">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="numeric(100000, 100000)" remarks="Transactions amount at the end of hour">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createIndex tableName="transaction" indexName="transaction_datetime_idx">
+            <column name="datetime"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

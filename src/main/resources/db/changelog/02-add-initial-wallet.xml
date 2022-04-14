@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="02" author="aobukhov" labels="initial-wallet">
+        <insert tableName="wallet">
+            <column name="id" value="BTC"/>
+            <column name="current_amount" value="1000"/>
+        </insert>
+
+        <insert tableName="transaction">
+            <column name="datetime" value="2022-04-12 11:10:10+04"/>
+            <column name="amount" value="1000"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
