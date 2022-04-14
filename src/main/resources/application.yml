@@ -4,6 +4,9 @@ application:
 spring:
   application:
     name: wallet-app
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   jackson:
     time-zone: UTC
     deserialization:
